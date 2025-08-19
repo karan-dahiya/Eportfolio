@@ -43,7 +43,7 @@ export default function Projects() {
       <div className="text-center space-y-4">
         <h2 className="text-3xl font-semibold">Featured Projects</h2>
         <p className="text-neutral-600 max-w-2xl mx-auto">
-          Here are some of the projects I've worked on. Each project represents different skills and technologies.
+          Here are some of the projects I have worked on. Each project represents different skills and technologies.
         </p>
       </div>
       

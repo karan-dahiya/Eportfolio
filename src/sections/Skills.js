@@ -78,7 +78,7 @@ export default function Skills() {
       >
         <h2 className="text-3xl font-semibold">Skills & Technologies</h2>
         <p className="text-neutral-600 max-w-2xl mx-auto">
-          Here are the technologies and tools I work with. I'm always learning and expanding my skill set.
+          Here are the technologies and tools I work with. I&apos;m always learning and expanding my skill set.
         </p>
       </motion.div>
       
