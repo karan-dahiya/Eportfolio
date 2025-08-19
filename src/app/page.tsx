@@ -12,24 +12,9 @@ import Resume from '../sections/Resume'
 import Contact from '../sections/Contact'
 
 export default function Page() {
-  const [theme, setTheme] = useState('light')
-
-  useEffect(() => {
-    const stored = localStorage.getItem('theme') || 'light'
-    setTheme(stored)
-    document.documentElement.classList.toggle('dark', stored === 'dark')
-  }, [])
-
-  const toggleTheme = () => {
-    const t = theme === 'dark' ? 'light' : 'dark'
-    setTheme(t)
-    localStorage.setItem('theme', t)
-    document.documentElement.classList.toggle('dark', t === 'dark')
-  }
-
   return (
     <div className="min-h-screen flex flex-col">
-      <Header onToggleTheme={toggleTheme} theme={theme} />
+      <Header />
       <main className="container mx-auto px-4 space-y-24 py-10 flex-1">
         <section id="home"><Home /></section>
         <section id="skills"><Skills /></section>

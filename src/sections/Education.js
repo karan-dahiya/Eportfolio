@@ -31,7 +31,7 @@ export default function Education() {
     <div className="space-y-8">
       <div className="text-center space-y-4">
         <h2 className="text-3xl font-semibold">Education</h2>
-        <p className="text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
+        <p className="text-neutral-600 max-w-2xl mx-auto">
           My educational background and continuous learning journey in technology and development.
         </p>
       </div>
@@ -52,14 +52,14 @@ export default function Education() {
               <div className="flex justify-between items-start">
                 <div>
                   <h3 className="font-semibold">{item.degree}</h3>
-                  <p className="text-neutral-600 dark:text-neutral-400">{item.school}</p>
+                  <p className="text-neutral-600">{item.school}</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-sm text-neutral-600 dark:text-neutral-400">{item.year}</p>
+                  <p className="text-sm text-neutral-600">{item.year}</p>
                   <p className="text-sm font-medium">{item.gpa}</p>
                 </div>
               </div>
-              <p className="text-sm text-neutral-600 dark:text-neutral-400">{item.description}</p>
+              <p className="text-sm text-neutral-600">{item.description}</p>
             </div>
           </motion.div>
         ))}
@@ -70,11 +70,11 @@ export default function Education() {
         <div className="grid md:grid-cols-2 gap-4">
           <div className="border rounded-lg p-4">
             <h4 className="font-medium">AWS Certified Developer</h4>
-            <p className="text-sm text-neutral-600 dark:text-neutral-400">Amazon Web Services</p>
+            <p className="text-sm text-neutral-600">Amazon Web Services</p>
           </div>
           <div className="border rounded-lg p-4">
             <h4 className="font-medium">MongoDB Database Administrator</h4>
-            <p className="text-sm text-neutral-600 dark:text-neutral-400">MongoDB University</p>
+            <p className="text-sm text-neutral-600">MongoDB University</p>
           </div>
         </div>
       </div>

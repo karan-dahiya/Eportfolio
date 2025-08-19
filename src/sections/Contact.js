@@ -13,8 +13,8 @@ export default function Contact() {
     <div className="space-y-8">
       <div className="text-center space-y-4">
         <h2 className="text-3xl font-semibold">Get In Touch</h2>
-        <p className="text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
-          I am always interested in new opportunities and collaborations. Feel free to reach out!
+        <p className="text-neutral-600 max-w-2xl mx-auto">
+          I'm always interested in new opportunities and collaborations. Feel free to reach out!
         </p>
       </div>
       
@@ -38,7 +38,7 @@ export default function Contact() {
                   id="name"
                   name="name"
                   required
-                  className="w-full px-4 py-3 border border-neutral-300 dark:border-neutral-700 rounded-xl bg-white dark:bg-neutral-800 focus:ring-2 focus:ring-brand-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-neutral-300 rounded-xl bg-white focus:ring-2 focus:ring-brand-500 focus:border-transparent"
                   placeholder="Your name"
                 />
               </div>
@@ -51,7 +51,7 @@ export default function Contact() {
                   id="email"
                   name="email"
                   required
-                  className="w-full px-4 py-3 border border-neutral-300 dark:border-neutral-700 rounded-xl bg-white dark:bg-neutral-800 focus:ring-2 focus:ring-brand-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-neutral-300 rounded-xl bg-white focus:ring-2 focus:ring-brand-500 focus:border-transparent"
                   placeholder="your@email.com"
                 />
               </div>
@@ -66,7 +66,7 @@ export default function Contact() {
                 id="subject"
                 name="subject"
                 required
-                className="w-full px-4 py-3 border border-neutral-300 dark:border-neutral-700 rounded-xl bg-white dark:bg-neutral-800 focus:ring-2 focus:ring-brand-500 focus:border-transparent"
+                className="w-full px-4 py-3 border border-neutral-300 rounded-xl bg-white focus:ring-2 focus:ring-brand-500 focus:border-transparent"
                 placeholder="What's this about?"
               />
             </div>
@@ -80,7 +80,7 @@ export default function Contact() {
                 name="message"
                 rows={6}
                 required
-                className="w-full px-4 py-3 border border-neutral-300 dark:border-neutral-700 rounded-xl bg-white dark:bg-neutral-800 focus:ring-2 focus:ring-brand-500 focus:border-transparent resize-none"
+                className="w-full px-4 py-3 border border-neutral-300 rounded-xl bg-white focus:ring-2 focus:ring-brand-500 focus:border-transparent resize-none"
                 placeholder="Tell me about your project or opportunity..."
               />
             </div>
@@ -113,7 +113,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="font-medium">Email</p>
-                  <p className="text-neutral-600 dark:text-neutral-400">hello@yourname.dev</p>
+                  <p className="text-neutral-600">hello@yourname.dev</p>
                 </div>
               </div>
               
@@ -123,7 +123,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="font-medium">Phone</p>
-                  <p className="text-neutral-600 dark:text-neutral-400">+1 (555) 123-4567</p>
+                  <p className="text-neutral-600">+1 (555) 123-4567</p>
                 </div>
               </div>
               
@@ -133,7 +133,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="font-medium">Location</p>
-                  <p className="text-neutral-600 dark:text-neutral-400">San Francisco, CA</p>
+                  <p className="text-neutral-600">San Francisco, CA</p>
                 </div>
               </div>
             </div>
@@ -144,19 +144,19 @@ export default function Contact() {
             <div className="flex gap-4">
               <a
                 href="#"
-                className="w-12 h-12 bg-neutral-100 dark:bg-neutral-800 rounded-full flex items-center justify-center hover:bg-brand-500 hover:text-white transition-colors"
+                className="w-12 h-12 bg-neutral-100 rounded-full flex items-center justify-center hover:bg-brand-500 hover:text-white transition-colors"
               >
                 <Github size={20} />
               </a>
               <a
                 href="#"
-                className="w-12 h-12 bg-neutral-100 dark:bg-neutral-800 rounded-full flex items-center justify-center hover:bg-brand-500 hover:text-white transition-colors"
+                className="w-12 h-12 bg-neutral-100 rounded-full flex items-center justify-center hover:bg-brand-500 hover:text-white transition-colors"
               >
                 <Linkedin size={20} />
               </a>
               <a
                 href="#"
-                className="w-12 h-12 bg-neutral-100 dark:bg-neutral-800 rounded-full flex items-center justify-center hover:bg-brand-500 hover:text-white transition-colors"
+                className="w-12 h-12 bg-neutral-100 rounded-full flex items-center justify-center hover:bg-brand-500 hover:text-white transition-colors"
               >
                 <Twitter size={20} />
               </a>
@@ -165,8 +165,8 @@ export default function Contact() {
           
           <div className="border-t pt-6">
             <h3 className="text-xl font-semibold mb-4">Availability</h3>
-            <p className="text-neutral-600 dark:text-neutral-400 mb-4">
-              I am currently available for freelance work and full-time opportunities.
+            <p className="text-neutral-600 mb-4">
+              I'm currently available for freelance work and full-time opportunities.
             </p>
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 bg-green-500 rounded-full"></div>

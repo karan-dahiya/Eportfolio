@@ -46,7 +46,7 @@ export default function Resume() {
     <div className="space-y-8">
       <div className="text-center space-y-4">
         <h2 className="text-3xl font-semibold">Resume</h2>
-        <p className="text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
+        <p className="text-neutral-600 max-w-2xl mx-auto">
           My professional experience and achievements in software development.
         </p>
         <motion.a
@@ -76,7 +76,7 @@ export default function Resume() {
               <div className="space-y-4">
                 <div>
                   <h4 className="text-xl font-semibold">{job.title}</h4>
-                  <div className="flex items-center gap-4 text-neutral-600 dark:text-neutral-400 mt-1">
+                  <div className="flex items-center gap-4 text-neutral-600 mt-1">
                     <div className="flex items-center gap-1">
                       <Briefcase size={14} />
                       <span>{job.company}</span>
@@ -92,7 +92,7 @@ export default function Resume() {
                   </div>
                 </div>
                 
-                <p className="text-neutral-600 dark:text-neutral-400">
+                <p className="text-neutral-600">
                   {job.description}
                 </p>
                 
@@ -115,7 +115,7 @@ export default function Resume() {
         <div className="grid md:grid-cols-3 gap-6">
           <div className="space-y-3">
             <h4 className="font-semibold">Frontend</h4>
-            <ul className="space-y-1 text-sm text-neutral-600 dark:text-neutral-400">
+            <ul className="space-y-1 text-sm text-neutral-600">
               <li>React & Next.js</li>
               <li>TypeScript & JavaScript</li>
               <li>Tailwind CSS & Styled Components</li>
@@ -124,7 +124,7 @@ export default function Resume() {
           </div>
           <div className="space-y-3">
             <h4 className="font-semibold">Backend</h4>
-            <ul className="space-y-1 text-sm text-neutral-600 dark:text-neutral-400">
+            <ul className="space-y-1 text-sm text-neutral-600">
               <li>Node.js & Express</li>
               <li>Python & Django</li>
               <li>PostgreSQL & MongoDB</li>
@@ -133,7 +133,7 @@ export default function Resume() {
           </div>
           <div className="space-y-3">
             <h4 className="font-semibold">Tools & Others</h4>
-            <ul className="space-y-1 text-sm text-neutral-600 dark:text-neutral-400">
+            <ul className="space-y-1 text-sm text-neutral-600">
               <li>Git & GitHub</li>
               <li>Docker & AWS</li>
               <li>Jest & Testing Library</li>

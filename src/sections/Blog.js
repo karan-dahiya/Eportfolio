@@ -42,7 +42,7 @@ export default function Blog() {
     <div className="space-y-8">
       <div className="text-center space-y-4">
         <h2 className="text-3xl font-semibold">Latest Blog Posts</h2>
-        <p className="text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
+        <p className="text-neutral-600 max-w-2xl mx-auto">
           Thoughts, tutorials, and insights about web development, technology, and my learning journey.
         </p>
       </div>
@@ -57,7 +57,7 @@ export default function Blog() {
             className="border rounded-xl p-6 hover:shadow-lg transition-shadow"
           >
             <div className="space-y-4">
-              <div className="flex items-center gap-4 text-sm text-neutral-600 dark:text-neutral-400">
+              <div className="flex items-center gap-4 text-sm text-neutral-600">
                 <div className="flex items-center gap-1">
                   <Calendar size={14} />
                   <span>{new Date(post.date).toLocaleDateString()}</span>
@@ -72,13 +72,13 @@ export default function Blog() {
                 <a href={`/blog/${post.slug}`}>{post.title}</a>
               </h3>
               
-              <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
+              <p className="text-neutral-600 text-sm leading-relaxed">
                 {post.excerpt}
               </p>
               
               <div className="flex flex-wrap gap-2">
                 {post.tags.map(tag => (
-                  <span key={tag} className="px-2 py-1 bg-neutral-100 dark:bg-neutral-800 text-xs rounded">
+                  <span key={tag} className="px-2 py-1 bg-neutral-100 text-xs rounded">
                     {tag}
                   </span>
                 ))}
@@ -99,7 +99,7 @@ export default function Blog() {
       <div className="text-center">
         <a 
           href="/blog"
-          className="inline-flex items-center gap-2 px-6 py-3 border rounded-xl hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors"
+          className="inline-flex items-center gap-2 px-6 py-3 border rounded-xl hover:bg-neutral-50 transition-colors"
         >
           View all posts
           <ArrowRight size={16} />

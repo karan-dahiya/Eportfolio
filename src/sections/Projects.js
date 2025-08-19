@@ -42,8 +42,8 @@ export default function Projects() {
     <div className="space-y-8">
       <div className="text-center space-y-4">
         <h2 className="text-3xl font-semibold">Featured Projects</h2>
-        <p className="text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
-          Here are some of the projects I have worked on. Each project represents different skills and technologies.
+        <p className="text-neutral-600 max-w-2xl mx-auto">
+          Here are some of the projects I've worked on. Each project represents different skills and technologies.
         </p>
       </div>
       
@@ -56,15 +56,15 @@ export default function Projects() {
             transition={{ duration: 0.5, delay: index * 0.1 }}
             className="border rounded-xl overflow-hidden hover:shadow-lg transition-shadow"
           >
-            <div className="aspect-video bg-neutral-100 dark:bg-neutral-800 flex items-center justify-center">
-              <p className="text-neutral-600 dark:text-neutral-400">Project Screenshot</p>
+            <div className="aspect-video bg-neutral-100 flex items-center justify-center">
+              <p className="text-neutral-600">Project Screenshot</p>
             </div>
             <div className="p-6 space-y-4">
               <h3 className="text-xl font-semibold">{project.title}</h3>
-              <p className="text-neutral-600 dark:text-neutral-400 text-sm">{project.description}</p>
+              <p className="text-neutral-600 text-sm">{project.description}</p>
               <div className="flex flex-wrap gap-2">
                 {project.tech.map(tech => (
-                  <span key={tech} className="px-2 py-1 bg-neutral-100 dark:bg-neutral-800 text-xs rounded">
+                  <span key={tech} className="px-2 py-1 bg-neutral-100 text-xs rounded">
                     {tech}
                   </span>
                 ))}
