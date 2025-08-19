@@ -69,31 +69,44 @@ const SKILLS = [
 export default function Skills() {
   return (
     <div className="space-y-8">
-      <div className="text-center space-y-4">
+      <motion.div 
+        className="text-center space-y-4"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+      >
         <h2 className="text-3xl font-semibold">Skills & Technologies</h2>
         <p className="text-neutral-600 max-w-2xl mx-auto">
           Here are the technologies and tools I work with. I'm always learning and expanding my skill set.
         </p>
-      </div>
+      </motion.div>
       
-      <div className="border border-gray-200 rounded-xl bg-gray-50 p-4">
+      <div className="border border-gray-200 rounded-xl bg-gray-50 p-4 shadow-lg">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {SKILLS.map((category, index) => (
             <motion.div
               key={category.category}
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              viewport={{ once: true }}
               className="p-2 space-y-3"
             >
               <div className="flex items-center gap-3">
-                <h3 className="font-semibold text-lg text-gray-800">{category.category}</h3>
+                <h3 className="font-semibold text-lg text-gray-800">
+                  {category.category}
+                </h3>
               </div>
               
               <div className="flex flex-wrap gap-2">
-                {category.skills.map(skill => (
-                  <span 
+                {category.skills.map((skill, skillIndex) => (
+                  <motion.span 
                     key={skill.name} 
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3, delay: skillIndex * 0.05 }}
+                    viewport={{ once: true }}
                     className={`px-3 py-2 ${skill.bgColor} ${skill.borderColor} text-white font-bold text-sm rounded-full border flex items-center gap-2 hover:shadow-md transition-all duration-200 hover:scale-105`}
                   >
                     <div className="w-6 h-6 flex items-center justify-center bg-white rounded-full">
@@ -106,7 +119,7 @@ export default function Skills() {
                       />
                     </div>
                     {skill.name}
-                  </span>
+                  </motion.span>
                 ))}
               </div>
             </motion.div>
