@@ -18,7 +18,7 @@ export default function Skills() {
       <div className="text-center space-y-4">
         <h2 className="text-3xl font-semibold">Skills & Technologies</h2>
         <p className="text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
-          Here are the technologies and tools I work with. I'm always learning and expanding my skill set.
+          Here are the technologies and tools I work with. I am always learning and expanding my skill set.
         </p>
       </div>
       

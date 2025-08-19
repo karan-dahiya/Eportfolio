@@ -14,7 +14,7 @@ export default function Contact() {
       <div className="text-center space-y-4">
         <h2 className="text-3xl font-semibold">Get In Touch</h2>
         <p className="text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
-          I'm always interested in new opportunities and collaborations. Feel free to reach out!
+          I am always interested in new opportunities and collaborations. Feel free to reach out!
         </p>
       </div>
       
@@ -166,7 +166,7 @@ export default function Contact() {
           <div className="border-t pt-6">
             <h3 className="text-xl font-semibold mb-4">Availability</h3>
             <p className="text-neutral-600 dark:text-neutral-400 mb-4">
-              I'm currently available for freelance work and full-time opportunities.
+              I am currently available for freelance work and full-time opportunities.
             </p>
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 bg-green-500 rounded-full"></div>
