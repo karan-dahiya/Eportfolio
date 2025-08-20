@@ -3,7 +3,6 @@ import { motion } from 'framer-motion'
 import { ExternalLink, Github } from 'lucide-react'
 import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
-import { image } from 'framer-motion/client'
 
 const PROJECTS = [
   {
@@ -16,26 +15,26 @@ const PROJECTS = [
     video: '/images/project/woowoo/woowoodemo.mp4',
     hasVideo: true
   },
-           {
-      title: 'Robo-Bot 3D Game',
-      description: 'Built in Unity (C#) featuring a robot navigating a space-themed world to collect treasure boxes. Implemented combat mechanics, health system, custom sound effects, and polished graphics to deliver an engaging gameplay experience. Clone the Git repository to play the game.',
-      tech: ['C#', 'Unity', 'Git','GitHub Desktop' ],
-      github: 'https://github.com/karan-dahiya/FinalProject',
-      live: null,
-      image: '/images/project/robomax/robomax.png',
-      video: '/images/project/robomax/robomax.mp4',
-      hasVideo: true
-    },
-         {
-       title: 'Tetris Game',
-       description: 'Developed a C++ implementation of the classic Tetris, demonstrating efficient programming and game design principles. Features include smooth graphics, intuitive keyboard controls, scoring system (+100 per line clear), and robust error handling for seamless gameplay. Clone the Git repository to play the game.',
-       tech: ['C++' ],
-       github: 'https://github.com/karan-dahiya/Tetris-Game',
-       live: null,
-       image: '/images/project/tetris/tetris.png',
-       video: '/images/project/tetris/tetris.mp4',
-       hasVideo: true
-     }
+  {
+    title: 'Robo-Bot 3D Game',
+    description: 'Built in Unity (C#) featuring a robot navigating a space-themed world to collect treasure boxes. Implemented combat mechanics, health system, custom sound effects, and polished graphics to deliver an engaging gameplay experience. Clone the Git repository to play the game.',
+    tech: ['C#', 'Unity', 'Git','GitHub Desktop' ],
+    github: 'https://github.com/karan-dahiya/FinalProject',
+    live: null,
+    image: '/images/project/robomax/robomax.png',
+    video: '/images/project/robomax/robomax.mp4',
+    hasVideo: true
+  },
+  {
+    title: 'Tetris Game',
+    description: 'Developed a C++ implementation of the classic Tetris, demonstrating efficient programming and game design principles. Features include smooth graphics, intuitive keyboard controls, scoring system (+100 per line clear), and robust error handling for seamless gameplay. Clone the Git repository to play the game.',
+    tech: ['C++' ],
+    github: 'https://github.com/karan-dahiya/Tetris-Game',
+    live: null,
+    image: '/images/project/tetris/tetris.png',
+    video: '/images/project/tetris/tetris.mp4',
+    hasVideo: true
+  }
 ]
 
 export default function Projects() {
@@ -133,93 +132,100 @@ export default function Projects() {
   }, [inViewStates, videoStates])
 
   return (
-    <div className="space-y-8">
-      <div className="text-center space-y-4">
-        <h2 className="text-3xl font-semibold">Featured Projects</h2>
-        <p className="text-neutral-600 max-w-2xl mx-auto">
+    <div className="space-y-6">
+      <motion.div 
+        className="text-center space-y-3"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="text-3xl font-bold text-gray-900">Featured Projects</h2>
+        <p className="text-gray-600 max-w-2xl mx-auto text-lg">
           Here are some of the projects I have worked on. Each project represents different skills and technologies.
         </p>
-      </div>
+      </motion.div>
       
-      <div className="grid md:grid-cols-2 gap-8">
-                 {PROJECTS.map((project, index) => (
-           <motion.div
-             key={project.title}
-             ref={(el) => {
-               projectRefs.current[index] = el
-             }}
-             data-project-index={index}
-             initial={{ opacity: 0, y: 20 }}
-             animate={{ opacity: 1, y: 0 }}
-             transition={{ duration: 0.5, delay: index * 0.1 }}
-             className="border rounded-xl overflow-hidden hover:shadow-lg transition-shadow h-full"
-           >
-                         <div className="aspect-video bg-neutral-100 relative overflow-hidden">
-               {project.hasVideo ? (
-                 <>
-                   {!videoStates[index] && (
-                     <div className="absolute inset-0 flex items-center justify-center">
-                       <Image
-                         src={project.image}
-                         alt={project.title}
-                         fill
-                         style={{ objectFit: 'cover' }}
-                         className="transition-opacity duration-500"
-                       />
-                     </div>
-                   )}
-                   {videoStates[index] && (
-                     <video
-                       ref={(el) => {
-                         videoRefs.current[index] = el
-                       }}
-                       className="w-full h-full object-cover"
-                       loop
-                       muted
-                       playsInline
-                       preload="metadata"
-                       poster={project.image}
-                       onError={() => {
-                         console.log('Video failed to load, showing image instead')
-                         setVideoStates(prev => ({
-                           ...prev,
-                           [index]: false
-                         }))
-                       }}
-                     >
-                       <source src={project.video} type="video/mp4" />
-                       Your browser does not support the video tag.
-                     </video>
-                   )}
-                 </>
-               ) : (
-                 <div className="w-full h-full flex items-center justify-center">
-                   <p className="text-neutral-600">Project Screenshot</p>
-                 </div>
-               )}
-             </div>
-            <div className="p-6 space-y-4">
-              <h3 className="text-xl font-semibold">{project.title}</h3>
-              <p className="text-neutral-600 text-sm">{project.description}</p>
+      <div className="grid md:grid-cols-2 gap-6">
+        {PROJECTS.map((project, index) => (
+          <motion.div
+            key={project.title}
+            ref={(el) => {
+              projectRefs.current[index] = el
+            }}
+            data-project-index={index}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: index * 0.1 }}
+            viewport={{ once: true }}
+            className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 h-full"
+          >
+            <div className="aspect-video bg-gray-100 relative overflow-hidden">
+              {project.hasVideo ? (
+                <>
+                  {!videoStates[index] && (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        style={{ objectFit: 'cover' }}
+                        className="transition-opacity duration-500"
+                      />
+                    </div>
+                  )}
+                  {videoStates[index] && (
+                    <video
+                      ref={(el) => {
+                        videoRefs.current[index] = el
+                      }}
+                      className="w-full h-full object-cover"
+                      loop
+                      muted
+                      playsInline
+                      preload="metadata"
+                      poster={project.image}
+                      onError={() => {
+                        console.log('Video failed to load, showing image instead')
+                        setVideoStates(prev => ({
+                          ...prev,
+                          [index]: false
+                        }))
+                      }}
+                    >
+                      <source src={project.video} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  )}
+                </>
+              ) : (
+                <div className="w-full h-full flex items-center justify-center">
+                  <p className="text-gray-600">Project Screenshot</p>
+                </div>
+              )}
+            </div>
+            <div className="p-5 space-y-4">
+              <h3 className="text-xl font-bold text-gray-900">{project.title}</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">{project.description}</p>
               <div className="flex flex-wrap gap-2">
                 {project.tech.map(tech => (
-                  <span key={tech} className="px-2 py-1 bg-neutral-100 text-xs rounded">
+                  <span key={tech} className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-lg font-medium">
                     {tech}
                   </span>
                 ))}
               </div>
-                             <div className="flex gap-3">
-                 <a href={project.github} className="flex items-center gap-2 text-sm hover:text-brand-600">
-                   <Github size={16} />
-                   Code
-                 </a>
-                 {project.live && (
-                   <a href={project.live} className="flex items-center gap-2 text-sm hover:text-brand-600">
-                     <ExternalLink size={16} />
-                     Live Demo
-                   </a>
-                 )}
-               </div>
+              <div className="flex gap-4">
+                <a href={project.github} className="flex items-center gap-2 text-sm hover:text-blue-600 transition-colors duration-200 font-medium">
+                  <Github size={16} />
+                  Code
+                </a>
+                {project.live && (
+                  <a href={project.live} className="flex items-center gap-2 text-sm hover:text-blue-600 transition-colors duration-200 font-medium">
+                    <ExternalLink size={16} />
+                    Live Demo
+                  </a>
+                )}
+              </div>
             </div>
           </motion.div>
         ))}

@@ -62,7 +62,7 @@ export default function Resume() {
   }, [isInView])
 
   return (
-    <div className="relative space-y-12" ref={sectionRef}>
+    <div className="relative space-y-6" ref={sectionRef}>
       {/* Background decorative elements */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 right-1/4 w-80 h-80 bg-gradient-to-bl from-purple-100 to-pink-100 rounded-full blur-3xl opacity-30"></div>
@@ -73,17 +73,16 @@ export default function Resume() {
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="text-center space-y-6"
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="text-center space-y-3"
       >
         <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-full">
           <FileText className="w-5 h-5 text-purple-600" />
           <span className="text-sm font-medium text-purple-700">Professional Experience</span>
         </div>
-        <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-purple-800 to-pink-800 bg-clip-text text-transparent">
-          Resume & Experience
-        </h2>
-        <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        <h2 className="text-3xl font-bold text-gray-900">Resume & Experience</h2>
+        <p className="text-gray-600 max-w-2xl mx-auto text-lg">
           My professional journey and achievements across various roles and industries. 
           Download my detailed resume to learn more about my skills and experience.
         </p>
@@ -92,8 +91,9 @@ export default function Resume() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-col items-center gap-6"
+          transition={{ duration: 0.5, delay: 0.1 }}
+          viewport={{ once: true }}
+          className="flex flex-col items-center gap-4"
         >
           <div className="relative">
             <video
@@ -102,7 +102,7 @@ export default function Resume() {
               loop
               muted
               playsInline
-              className="w-56 h-56"
+              className="w-48 h-48"
               preload="metadata"
             />
           </div>
@@ -110,60 +110,62 @@ export default function Resume() {
           <motion.a
             href="/images/resume/Karan_Resume.pdf"
             download
-            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl hover:from-purple-700 hover:to-pink-700 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl hover:from-purple-700 hover:to-pink-700 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            <Download size={20} />
+            <Download size={18} />
             Download Resume (PDF)
           </motion.a>
         </motion.div>
       </motion.div>
       
       {/* Work Experience Section */}
-      <div className="space-y-10">
+      <div className="space-y-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-center space-y-4"
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="text-center space-y-3"
         >
           <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-full">
             <Briefcase className="w-5 h-5 text-blue-600" />
             <span className="text-sm font-medium text-blue-700">Work History</span>
           </div>
-          <h3 className="text-3xl font-bold text-gray-900">Professional Experience</h3>
+          <h3 className="text-2xl font-bold text-gray-900">Professional Experience</h3>
         </motion.div>
         
-        <div className="space-y-8">
+        <div className="space-y-6">
           {EXPERIENCE.map((job, index) => (
             <motion.div
               key={`${job.company}-${job.title}`}
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
               className="group relative"
             >
               {/* Timeline connector */}
               <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-purple-500"></div>
               
-              <div className="relative bg-white border-2 border-gray-100 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 group-hover:border-blue-200 group-hover:bg-gradient-to-r group-hover:from-blue-50 group-hover:to-purple-50">
+              <div className="relative bg-white border-2 border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 group-hover:border-blue-200 group-hover:bg-gradient-to-r group-hover:from-blue-50 group-hover:to-purple-50">
                 {/* Timeline dot */}
-                <div className="absolute left-6 top-8 w-4 h-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full border-4 border-white shadow-lg group-hover:scale-125 transition-transform duration-300"></div>
+                <div className="absolute left-6 top-6 w-4 h-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full border-4 border-white shadow-lg group-hover:scale-125 transition-transform duration-300"></div>
                 
-                <div className="ml-8 space-y-6">
+                <div className="ml-8 space-y-4">
                   {/* Header */}
-                  <div className="space-y-4">
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                  <div className="space-y-3">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
                       <div>
-                        <h4 className="text-2xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors">
+                        <h4 className="text-xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors">
                           {job.title}
                         </h4>
                         <p className="text-lg font-semibold text-purple-600 mt-1">
                           {job.company}
                         </p>
                       </div>
-                      <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full">
+                      <div className="flex items-center gap-2 px-3 py-2 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full">
                         <Calendar className="w-4 h-4 text-blue-600" />
                         <span className="text-sm font-medium text-blue-700">{job.period}</span>
                       </div>
@@ -177,27 +179,28 @@ export default function Resume() {
                   </div>
                   
                   {/* Description */}
-                  <p className="text-gray-600 leading-relaxed text-lg">
+                  <p className="text-gray-600 leading-relaxed">
                     {job.description}
                   </p>
                   
                   {/* Achievements */}
                   <div className="space-y-3">
                     <h5 className="font-semibold text-gray-900 flex items-center gap-2">
-                      <Award className="w-5 h-5 text-purple-600" />
+                      <Award className="w-4 h-4 text-purple-600" />
                       Key Achievements
                     </h5>
-                    <ul className="space-y-3">
+                    <ul className="space-y-2">
                       {job.achievements.map((achievement, idx) => (
                         <motion.li 
                           key={idx} 
                           initial={{ opacity: 0, x: -10 }}
                           whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.3, delay: idx * 0.1 }}
+                          transition={{ duration: 0.3, delay: idx * 0.05 }}
+                          viewport={{ once: true }}
                           className="flex items-start gap-3 text-gray-700"
                         >
                           <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mt-2 flex-shrink-0"></div>
-                          <span className="leading-relaxed">{achievement}</span>
+                          <span className="leading-relaxed text-sm">{achievement}</span>
                         </motion.li>
                       ))}
                     </ul>

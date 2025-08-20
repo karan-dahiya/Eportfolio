@@ -14,33 +14,35 @@ export default function Home() {
   };
 
   return (
-    <div className="grid md:grid-cols-2 gap-6 items-center pt-6 md:pt-0">
+    <div className="grid md:grid-cols-2 gap-8 items-center pt-4 md:pt-0">
       <motion.div 
-        initial={{ opacity: 0, y: 16 }} 
+        initial={{ opacity: 0, y: 20 }} 
         animate={{ opacity: 1, y: 0 }} 
-        transition={{ duration: 0.6 }} 
-        className="space-y-4"
+        transition={{ duration: 0.5 }} 
+        className="space-y-6"
       >
-        <h1 className="text-3xl sm:text-4xl font-bold m-0">
-          Hi, I&apos;m Karan Dahiya,
-        </h1>
-        <h1 className="text-xl sm:text-4xl font-semibold">
-          Full‑Stack Developer & Data Enthusiast
-        </h1>
-        <p className="text-neutral-600">
+        <div className="space-y-3">
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">
+            Hi, I&apos;m Karan Dahiya,
+          </h1>
+          <h2 className="text-xl sm:text-3xl font-semibold text-blue-600">
+            Full‑Stack Developer & Data Enthusiast
+          </h2>
+        </div>
+        <p className="text-gray-600 text-lg leading-relaxed">
           I build web and mobile applications, explore game development, and work with data analytics. I thrive on learning, solving challenges, and growing as a developer in the ever-evolving tech world.
         </p>
 
-        <div className="flex gap-3">
+        <div className="flex gap-4">
           <button 
             onClick={() => scrollToSection('projects')}
-            className="px-4 py-2 bg-brand-500 text-white rounded-xl hover:bg-brand-600 transition-colors duration-200 cursor-pointer"
+            className="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors duration-200 cursor-pointer font-medium shadow-sm hover:shadow-md"
           >
             View Projects
           </button>
           <button 
             onClick={() => scrollToSection('contact')}
-            className="px-4 py-2 border rounded-xl hover:bg-gray-50 transition-colors duration-200 cursor-pointer"
+            className="px-6 py-3 border border-gray-300 rounded-xl hover:bg-gray-50 hover:border-blue-300 transition-colors duration-200 cursor-pointer font-medium"
           >
             Contact Me
           </button>
@@ -48,17 +50,18 @@ export default function Home() {
       </motion.div>
 
       <motion.div 
-        initial={{ opacity: 0, y: 16 }} 
+        initial={{ opacity: 0, y: 20 }} 
         animate={{ opacity: 1, y: 0 }} 
-        transition={{ duration: 0.6, delay: 0.1 }} 
-        className="rounded-xl border p-1"
+        transition={{ duration: 0.5, delay: 0.1 }} 
+        className="flex justify-center md:justify-end"
       >
-        <div className="relative w-full h-[400px] bg-neutral-100 rounded-xl overflow-hidden">
+        <div className="relative w-full max-w-md h-[350px] bg-gray-100 rounded-2xl overflow-hidden shadow-lg">
           <Image
             src="/images/profilepicture/myphoto.jpg"
             alt="My Photo"
             fill
             style={{ objectFit: 'cover' }}
+            className="hover:scale-105 transition-transform duration-300"
           />
         </div>
       </motion.div>

@@ -68,54 +68,52 @@ const SKILLS = [
 
 export default function Skills() {
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
       <motion.div 
-        className="text-center space-y-4"
+        className="text-center space-y-3"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.5 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-3xl font-semibold">Skills & Technologies</h2>
-        <p className="text-neutral-600 max-w-2xl mx-auto">
+        <h2 className="text-3xl font-bold text-gray-900">Skills & Technologies</h2>
+        <p className="text-gray-600 max-w-2xl mx-auto text-lg">
           Here are the technologies and tools I work with. I&apos;m always learning and expanding my skill set.
         </p>
       </motion.div>
       
-      <div className="border border-gray-200 rounded-xl bg-white p-4 shadow-lg">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="border border-gray-200 rounded-2xl bg-white p-6 shadow-lg">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {SKILLS.map((category, index) => (
             <motion.div
               key={category.category}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
               viewport={{ once: true }}
-              className="p-2 space-y-3"
+              className="space-y-3"
             >
-              <div className="flex items-center gap-3">
-                <h3 className="font-semibold text-lg text-gray-800">
-                  {category.category}
-                </h3>
-              </div>
+              <h3 className="font-semibold text-lg text-gray-800 border-b border-gray-100 pb-2">
+                {category.category}
+              </h3>
               
               <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill, skillIndex) => (
                   <motion.span 
                     key={skill.name} 
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.3, delay: skillIndex * 0.05 }}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3, delay: skillIndex * 0.03 }}
                     viewport={{ once: true }}
-                    className={`px-3 py-2 ${skill.bgColor} ${skill.borderColor} text-white font-bold text-sm rounded-full border flex items-center gap-2 hover:shadow-md transition-all duration-200 hover:scale-105`}
+                    className={`px-3 py-2 ${skill.bgColor} ${skill.borderColor} text-white font-bold text-sm rounded-lg border flex items-center gap-2 hover:shadow-md transition-all duration-200 hover:scale-105`}
                   >
-                    <div className="w-6 h-6 flex items-center justify-center bg-white rounded-full">
+                    <div className="w-5 h-5 flex items-center justify-center bg-white rounded-full">
                       <Image 
                         src={skill.logo} 
                         alt={skill.name}
-                        width={16}
-                        height={16}
-                        className="w-4 h-4"
+                        width={14}
+                        height={14}
+                        className="w-3 h-3"
                       />
                     </div>
                     {skill.name}
