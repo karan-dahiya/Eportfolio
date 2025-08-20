@@ -14,7 +14,7 @@ export default function Home() {
   };
 
   return (
-    <div className="grid md:grid-cols-2 gap-8 items-center pt-4 md:pt-0">
+    <div className="grid md:grid-cols-2 gap-8 items-center pt-8 md:pt-0">
       <motion.div 
         initial={{ opacity: 0, y: 20 }} 
         animate={{ opacity: 1, y: 0 }} 
@@ -22,7 +22,7 @@ export default function Home() {
         className="space-y-6"
       >
         <div className="space-y-3">
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 m-0">
             Hi, I&apos;m Karan Dahiya,
           </h1>
           <h2 className="text-xl sm:text-3xl font-semibold text-blue-600">

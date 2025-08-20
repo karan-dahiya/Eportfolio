@@ -66,14 +66,14 @@ export default function Education() {
               {/* Header Section */}
               <div className="relative z-10">
                 <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-6">
-                  <div className="flex flex-col md:flex-row items-start gap-6">
+                  <div className="flex flex-row items-start gap-6">
                     {/* Logo Container */}
                     <motion.div 
                       className="flex-shrink-0"
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <div className="w-28 h-28 bg-gradient-to-br from-green-100 to-emerald-100 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300 p-3">
+                      <div className="w-28 h-28 flex items-center justify-center">
                         <Image 
                           src="/images/education/logo.png"
                           alt="Camosun College Logo"
@@ -102,22 +102,10 @@ export default function Education() {
                       </div>
                     </div>
                   </div>
-                  
-                  {/* Status Badge */}
-                  <div className="flex-shrink-0">
-                    <div className="inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-green-100 to-emerald-100 border border-green-200 rounded-full">
-                      <Star className="w-4 h-4 text-green-600" />
-                      <span className="text-sm font-semibold text-green-700">Completed</span>
-                    </div>
-                  </div>
                 </div>
 
                 {/* Description */}
                 <div className="mb-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <BookOpen className="w-5 h-5 text-green-600" />
-                    <h4 className="text-lg font-semibold text-gray-900">Program Overview</h4>
-                  </div>
                   <p className="text-gray-700 leading-relaxed">
                     {item.description}
                   </p>
@@ -130,7 +118,7 @@ export default function Education() {
                     <h4 className="text-lg font-semibold text-gray-900">Notable Achievements</h4>
                   </div>
                   
-                  <div className="grid md:grid-cols-2 gap-3">
+                  <div className="grid md:grid-cols-2 gap-2">
                     {item.achievements.map((achievement, idx) => (
                       <motion.div
                         key={idx}
@@ -138,7 +126,7 @@ export default function Education() {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.3, delay: 0.4 + idx * 0.05 }}
                         viewport={{ once: true }}
-                        className="flex items-start gap-3 p-3 bg-white rounded-lg border border-gray-100 hover:border-green-200 hover:bg-green-50 transition-all duration-300 group/achievement"
+                        className="flex items-start gap-3 p-2 bg-white rounded-lg border border-gray-100 hover:border-green-200 hover:bg-green-50 transition-all duration-300 group/achievement"
                       >
                         <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0 bg-gradient-to-r from-green-500 to-emerald-500 group-hover/achievement:scale-125 transition-transform duration-300"></div>
                         <span className="text-gray-700 leading-relaxed text-sm group-hover/achievement:text-gray-900 transition-colors duration-300">
