@@ -5,39 +5,26 @@ import { useState, useEffect, useRef } from 'react'
 
 const EXPERIENCE = [
   {
-    title: 'Full-Stack Developer',
-    company: 'Tech Solutions Inc.',
-    location: 'San Francisco, CA',
-    period: '2023 - Present',
-    description: 'Develop and maintain web applications using React, Node.js, and PostgreSQL. Lead a team of 3 developers and implement CI/CD pipelines.',
+    title: 'Security Professional',
+    company: 'Paladin Security',
+    location: 'Part-time',
+    period: 'May 2024 - Present',
+    description: 'Provide comprehensive security services including alarm monitoring, first aid assistance, and customer support to ensure safety and security of premises and personnel.',
     achievements: [
-      'Reduced application load time by 40% through optimization',
-      'Implemented automated testing increasing coverage to 85%',
-      'Mentored junior developers and conducted code reviews'
+      'Monitor security systems and respond promptly to alarms and emergency situations',
+      'Provide first aid assistance and emergency response when required'
     ]
   },
   {
-    title: 'Frontend Developer',
-    company: 'Digital Agency XYZ',
-    location: 'Remote',
-    period: '2022 - 2023',
-    description: 'Built responsive user interfaces and implemented modern web technologies. Collaborated with designers and backend developers.',
+    title: 'Assistant Coordinator',
+    company: 'Allianz Partners',
+    location: 'Full-time',
+    period: 'Jul 2023 - Dec 2023',
+    description: 'Leveraged SQL\'s functions to extract relevant information & conduct insightful analysis by uncovering key metrics such as demand seasonality, churn rate & competition dynamics, thus optimizing lead conversion tracking and sales performance analysis ensuring data-driven decision-making.',
     achievements: [
-      'Developed 10+ client websites using React and TypeScript',
-      'Improved accessibility scores to 95+ on all projects',
-      'Reduced bundle size by 30% through code splitting'
-    ]
-  },
-  {
-    title: 'Junior Developer',
-    company: 'StartupHub',
-    location: 'New York, NY',
-    period: '2021 - 2022',
-    description: 'Assisted in developing features for a SaaS platform. Worked with JavaScript, React, and Firebase.',
-    achievements: [
-      'Built user authentication system with Firebase',
-      'Created responsive dashboard components',
-      'Participated in agile development processes'
+      'Developed BI Dashboard that effectively conveyed top KPI\'s, enabling strategic planning and targeted sales initiatives',
+      'Used CRM to connect to clients, enhancing engagement through personalized outreach and tailored product presentations',
+      'Received commendation from board of directors for company\'s monthly revenue increase of 25%'
     ]
   }
 ]

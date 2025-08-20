@@ -102,22 +102,11 @@ export default function Education() {
                       </div>
                     </div>
                   </div>
-                  
-                  {/* Status Badge */}
-                  <div className="flex-shrink-0">
-                    <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-green-100 to-emerald-100 border border-green-200 rounded-full">
-                      <Star className="w-5 h-5 text-green-600" />
-                      <span className="text-sm font-semibold text-green-700">Completed</span>
-                    </div>
-                  </div>
+              
                 </div>
 
                 {/* Description */}
                 <div className="mb-8">
-                  <div className="flex items-center gap-3 mb-4">
-                    <BookOpen className="w-6 h-6 text-green-600" />
-                    <h4 className="text-xl font-semibold text-gray-900">Program Overview</h4>
-                  </div>
                   <p className="text-gray-700 leading-relaxed text-lg">
                     {item.description}
                   </p>
