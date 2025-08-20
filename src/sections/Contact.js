@@ -1,6 +1,6 @@
 'use client'
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react'
+import { Mail, Phone, MapPin, Send, Linkedin } from 'lucide-react'
 
 export default function Contact() {
   const handleSubmit = (e) => {
@@ -106,52 +106,55 @@ export default function Contact() {
         >
           <div>
             <h3 className="text-xl font-semibold mb-6">Contact Information</h3>
-            <div className="space-y-4">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-brand-500 rounded-full flex items-center justify-center">
-                  <Mail size={18} className="text-white" />
-                </div>
-                <div>
-                  <p className="font-medium">Email</p>
-                  <p className="text-neutral-600">karan166728@gmail.com</p>
-                </div>
-              </div>
-              
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-brand-500 rounded-full flex items-center justify-center">
-                  <MapPin size={18} className="text-white" />
-                </div>
-                <div>
-                  <p className="font-medium">Location</p>
-                  <p className="text-neutral-600">Victoria, BC, Canada</p>
-                </div>
-              </div>
-            </div>
+                         <div className="space-y-4">
+               <a 
+                 href="mailto:karan166728@gmail.com"
+                 className="flex items-center gap-3 p-4 border border-gray-200 rounded-xl bg-white shadow-sm hover:shadow-lg hover:border-brand-500 hover:bg-blue-50 transition-all cursor-pointer"
+               >
+                 <div className="w-10 h-10 bg-brand-500 rounded-full flex items-center justify-center">
+                   <Mail size={18} className="text-white" />
+                 </div>
+                 <div>
+                   <p className="font-medium">Email</p>
+                   <p className="text-neutral-600">karan166728@gmail.com</p>
+                 </div>
+               </a>
+               
+               <a 
+                 href="https://www.google.com/maps/place/Victoria,+BC,+Canada"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="flex items-center gap-3 p-4 border border-gray-200 rounded-xl bg-white shadow-sm hover:shadow-lg hover:border-brand-500 hover:bg-blue-50 transition-all cursor-pointer"
+               >
+                 <div className="w-10 h-10 bg-brand-500 rounded-full flex items-center justify-center">
+                   <MapPin size={18} className="text-white" />
+                 </div>
+                 <div>
+                   <p className="font-medium">Location</p>
+                   <p className="text-neutral-600">Victoria, BC, Canada</p>
+                 </div>
+               </a>
+               
+                               <a 
+                  href="https://www.linkedin.com/in/karan-dahiya/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 p-4 border border-gray-200 rounded-xl bg-white shadow-sm hover:shadow-lg hover:border-brand-500 hover:bg-blue-50 transition-all cursor-pointer"
+                >
+                  <div className="w-10 h-10 bg-brand-500 rounded-full flex items-center justify-center">
+                    <Linkedin size={18} className="text-white" />
+                  </div>
+                  <div>
+                    <p className="font-medium">LinkedIn</p>
+                    <span className="text-neutral-600">
+                      Karan Dahiya
+                    </span>
+                  </div>
+                </a>
+             </div>
           </div>
           
-          <div>
-            <h3 className="text-xl font-semibold mb-6">Follow Me</h3>
-            <div className="flex gap-4">
-              <a
-                href="#"
-                className="w-12 h-12 bg-neutral-100 rounded-full flex items-center justify-center hover:bg-brand-500 hover:text-white transition-colors"
-              >
-                <Github size={20} />
-              </a>
-              <a
-                href="#"
-                className="w-12 h-12 bg-neutral-100 rounded-full flex items-center justify-center hover:bg-brand-500 hover:text-white transition-colors"
-              >
-                <Linkedin size={20} />
-              </a>
-              <a
-                href="#"
-                className="w-12 h-12 bg-neutral-100 rounded-full flex items-center justify-center hover:bg-brand-500 hover:text-white transition-colors"
-              >
-                <Twitter size={20} />
-              </a>
-            </div>
-          </div>
+
           
           <div className="border-t pt-6">
             <h3 className="text-xl font-semibold mb-4">Availability</h3>

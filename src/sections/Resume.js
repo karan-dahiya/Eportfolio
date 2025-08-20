@@ -1,6 +1,7 @@
 'use client'
 import { motion } from 'framer-motion'
 import { Download, Briefcase, MapPin, Calendar } from 'lucide-react'
+import { useState, useEffect, useRef } from 'react'
 
 const EXPERIENCE = [
   {
@@ -42,23 +43,73 @@ const EXPERIENCE = [
 ]
 
 export default function Resume() {
+  const [isInView, setIsInView] = useState(false)
+  const sectionRef = useRef(null)
+  const videoRef = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting)
+      },
+      { threshold: 0.3 }
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    if (videoRef.current) {
+      if (isInView) {
+        videoRef.current.play().catch(error => {
+          console.log('Video autoplay failed:', error)
+        })
+      } else {
+        videoRef.current.pause()
+      }
+    }
+  }, [isInView])
+
   return (
-    <div className="space-y-8">
+    <div className="space-y-8" ref={sectionRef}>
       <div className="text-center space-y-4">
         <h2 className="text-3xl font-semibold">Resume</h2>
         <p className="text-neutral-600 max-w-2xl mx-auto">
-          My professional experience and achievements in software development.
+          My professional experience and achievements across various roles and industries.
         </p>
-        <motion.a
-          href="/resume.pdf"
-          download
-          className="inline-flex items-center gap-2 px-6 py-3 bg-brand-500 text-white rounded-xl hover:bg-brand-600 transition-colors"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+        
+        {/* Video above download button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex justify-center mb-4"
         >
-          <Download size={16} />
-          Download Resume (PDF)
-        </motion.a>
+                     <video
+             ref={videoRef}
+             src="/images/resume/gif.mp4"
+             loop
+             muted
+             playsInline
+             className="w-48 h-48 rounded-xl"
+             preload="metadata"
+           />
+        </motion.div>
+        
+                 <motion.a
+           href="/images/resume/Karan_Resume.pdf"
+           download
+           className="inline-flex items-center gap-2 px-6 py-3 bg-brand-500 text-white rounded-xl hover:bg-brand-600 transition-colors"
+           whileHover={{ scale: 1.05 }}
+           whileTap={{ scale: 0.95 }}
+         >
+           <Download size={16} />
+           Download Resume (PDF)
+         </motion.a>
       </div>
       
       <div className="space-y-8">
