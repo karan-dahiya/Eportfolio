@@ -26,7 +26,7 @@ export default function Contact() {
       >
         <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-full">
           <MessageCircle className="w-5 h-5 text-blue-600" />
-          <span className="text-sm font-medium text-blue-700">Let's Connect</span>
+          <span className="text-sm font-medium text-blue-700">Let&apos;s Connect</span>
         </div>
         <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 bg-clip-text text-transparent">
           Get In Touch
@@ -47,7 +47,7 @@ export default function Contact() {
         >
           <div className="space-y-4">
             <h3 className="text-2xl font-bold text-gray-900">Send me a message</h3>
-            <p className="text-gray-600">Fill out the form below and I'll get back to you as soon as possible.</p>
+            <p className="text-gray-600">Fill out the form below and I&apos;ll get back to you as soon as possible.</p>
           </div>
           
           <form onSubmit={handleSubmit} className="space-y-6">
