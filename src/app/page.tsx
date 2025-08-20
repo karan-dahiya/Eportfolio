@@ -7,7 +7,6 @@ import Home from '../sections/Home'
 import Skills from '../sections/Skills'
 import Projects from '../sections/Projects'
 import Education from '../sections/Education'
-import Blog from '../sections/Blog'
 import Resume from '../sections/Resume'
 import Contact from '../sections/Contact'
 
@@ -20,7 +19,6 @@ export default function Page() {
         <section id="skills"><Skills /></section>
         <section id="projects"><Projects /></section>
         <section id="education"><Education /></section>
-        <section id="blog"><Blog /></section>
         <section id="resume"><Resume /></section>
         <section id="contact"><Contact /></section>
       </main>

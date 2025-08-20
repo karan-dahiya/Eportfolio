@@ -82,7 +82,7 @@ export default function Skills() {
         </p>
       </motion.div>
       
-      <div className="border border-gray-200 rounded-xl bg-gray-50 p-4 shadow-lg">
+      <div className="border border-gray-200 rounded-xl bg-white p-4 shadow-lg">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {SKILLS.map((category, index) => (
             <motion.div

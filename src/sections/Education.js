@@ -1,28 +1,23 @@
 'use client'
 import { motion } from 'framer-motion'
 import { GraduationCap } from 'lucide-react'
+import Image from 'next/image'
 
 const EDUCATION = [
   {
-    degree: 'Bachelor of Science in Computer Science',
-    school: 'University of Technology',
-    year: '2020 - 2024',
-    description: 'Focused on software engineering, algorithms, and data structures. Graduated with honors.',
-    gpa: '3.8/4.0'
-  },
-  {
-    degree: 'Full-Stack Web Development Bootcamp',
-    school: 'Coding Academy',
-    year: '2023',
-    description: 'Intensive 12-week program covering modern web technologies and best practices.',
-    gpa: 'Certificate'
-  },
-  {
-    degree: 'High School Diploma',
-    school: 'Tech High School',
-    year: '2016 - 2020',
-    description: 'Specialized in mathematics and computer science. Member of the robotics team.',
-    gpa: '3.9/4.0'
+    degree: 'Information and Computer Systems',
+    school: 'Camosun College',
+    location: 'Victoria, BC',
+    
+    description: 'Comprehensive program focused on modern software development, database management, and system architecture. Developed expertise in full-stack development, cloud computing, and agile methodologies.',
+    achievements: [
+      'Dean\'s List recognition for academic excellence',
+      'Completed capstone project: Full-stack web application with real-world impact',
+      'Mentored junior students in programming fundamentals',
+      'Successfully managed a team as SCRUM Master',
+      'Led effective weekly meetings with sponsors to ensure project alignment',
+      'Delivered class and event presentations with strong public speaking skills'
+    ]
   }
 ]
 
@@ -36,47 +31,65 @@ export default function Education() {
         </p>
       </div>
       
-      <div className="space-y-6">
+      <div className="space-y-8">
         {EDUCATION.map((item, index) => (
           <motion.div
             key={item.degree}
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="flex gap-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.1 }}
+                         className="bg-white border border-black rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden"
           >
-            <div className="flex-shrink-0 w-12 h-12 bg-brand-500 rounded-full flex items-center justify-center">
-              <GraduationCap size={20} className="text-white" />
-            </div>
-            <div className="flex-1 space-y-2">
-              <div className="flex justify-between items-start">
+                         {/* Background Pattern */}
+             <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-green-50 to-transparent rounded-full -translate-y-16 translate-x-16 opacity-50"></div>
+             <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-green-50 to-transparent rounded-full translate-y-12 -translate-x-12 opacity-30"></div>
+            
+            {/* Header Section */}
+            <div className="flex items-start justify-between mb-6">
+              <div className="flex items-center gap-6">
+                                                  <div className="flex-shrink-0 w-24 h-24 bg-white flex items-center justify-center shadow-lg p-0 hover:shadow-xl transition-shadow duration-300">
+                   <Image 
+                     src="/images/education/logo.png"
+                     alt="Camosun College Logo"
+                     width={100}
+                     height={100}
+                     className="object-contain rounded-xl"
+                   />
+                 </div>
                 <div>
-                  <h3 className="font-semibold">{item.degree}</h3>
-                  <p className="text-neutral-600">{item.school}</p>
-                </div>
-                <div className="text-right">
-                  <p className="text-sm text-neutral-600">{item.year}</p>
-                  <p className="text-sm font-medium">{item.gpa}</p>
+                  <h3 className="text-2xl font-bold text-gray-900">{item.degree}</h3>
+                                     <div className="mt-1">
+                     <p className="text-lg font-semibold" style={{ color: '#91BD36' }}>{item.school}</p>
+                     <p className="text-sm text-gray-500 mt-1">{item.location}</p>
+                   </div>
+                  
                 </div>
               </div>
-              <p className="text-sm text-neutral-600">{item.description}</p>
+            </div>
+
+            {/* Description */}
+            <p className="text-gray-700 leading-relaxed mb-6">{item.description}</p>
+
+            {/* Achievements Section */}
+            <div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Notable Achievements</h4>
+              <div className="space-y-2">
+                {item.achievements.map((achievement, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4, delay: 0.4 + idx * 0.1 }}
+                    className="flex items-start gap-3 text-sm text-gray-700"
+                  >
+                                         <span className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#91BD36' }}></span>
+                    <span>{achievement}</span>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </motion.div>
         ))}
-      </div>
-      
-      <div className="border-t pt-8">
-        <h3 className="text-xl font-semibold mb-4">Certifications</h3>
-        <div className="grid md:grid-cols-2 gap-4">
-          <div className="border rounded-lg p-4">
-            <h4 className="font-medium">AWS Certified Developer</h4>
-            <p className="text-sm text-neutral-600">Amazon Web Services</p>
-          </div>
-          <div className="border rounded-lg p-4">
-            <h4 className="font-medium">MongoDB Database Administrator</h4>
-            <p className="text-sm text-neutral-600">MongoDB University</p>
-          </div>
-        </div>
       </div>
     </div>
   )

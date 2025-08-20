@@ -18,14 +18,24 @@ const PROJECTS = [
   },
            {
       title: 'Robo-Bot 3D Game',
-      description: 'Built in Unity (C#) featuring a robot navigating a space-themed world to collect treasure boxes. Implemented combat mechanics, health system, custom sound effects, and polished graphics to deliver an engaging gameplay experience.',
+      description: 'Built in Unity (C#) featuring a robot navigating a space-themed world to collect treasure boxes. Implemented combat mechanics, health system, custom sound effects, and polished graphics to deliver an engaging gameplay experience. Clone the Git repository to play the game.',
       tech: ['C#', 'Unity', 'Git','GitHub Desktop' ],
-      github: 'https://github.com/KaranDahiya/Robo-Bot-3D-Game',
+      github: 'https://github.com/karan-dahiya/FinalProject',
       live: null,
       image: '/images/project/robomax/robomax.png',
       video: '/images/project/robomax/robomax.mp4',
       hasVideo: true
-    }
+    },
+         {
+       title: 'Tetris Game',
+       description: 'Developed a C++ implementation of the classic Tetris, demonstrating efficient programming and game design principles. Features include smooth graphics, intuitive keyboard controls, scoring system (+100 per line clear), and robust error handling for seamless gameplay. Clone the Git repository to play the game.',
+       tech: ['C++' ],
+       github: 'https://github.com/karan-dahiya/Tetris-Game',
+       live: null,
+       image: '/images/project/tetris/tetris.png',
+       video: '/images/project/tetris/tetris.mp4',
+       hasVideo: true
+     }
 ]
 
 export default function Projects() {

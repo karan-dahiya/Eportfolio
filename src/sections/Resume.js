@@ -109,39 +109,6 @@ export default function Resume() {
           ))}
         </div>
       </div>
-      
-      <div className="border-t pt-8">
-        <h3 className="text-2xl font-semibold mb-6">Skills Summary</h3>
-        <div className="grid md:grid-cols-3 gap-6">
-          <div className="space-y-3">
-            <h4 className="font-semibold">Frontend</h4>
-            <ul className="space-y-1 text-sm text-neutral-600">
-              <li>React & Next.js</li>
-              <li>TypeScript & JavaScript</li>
-              <li>Tailwind CSS & Styled Components</li>
-              <li>Redux & Context API</li>
-            </ul>
-          </div>
-          <div className="space-y-3">
-            <h4 className="font-semibold">Backend</h4>
-            <ul className="space-y-1 text-sm text-neutral-600">
-              <li>Node.js & Express</li>
-              <li>Python & Django</li>
-              <li>PostgreSQL & MongoDB</li>
-              <li>REST APIs & GraphQL</li>
-            </ul>
-          </div>
-          <div className="space-y-3">
-            <h4 className="font-semibold">Tools & Others</h4>
-            <ul className="space-y-1 text-sm text-neutral-600">
-              <li>Git & GitHub</li>
-              <li>Docker & AWS</li>
-              <li>Jest & Testing Library</li>
-              <li>Agile & Scrum</li>
-            </ul>
-          </div>
-        </div>
-      </div>
     </div>
   )
 }
