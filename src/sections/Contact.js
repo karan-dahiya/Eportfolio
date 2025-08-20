@@ -36,11 +36,11 @@ export default function Contact() {
         </p>
       </motion.div>
       
-      <div className="grid lg:grid-cols-2 gap-8">      
+      <div className="max-w-4xl mx-auto">      
         {/* Contact Info */}
         <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true }}
           className="space-y-6"
