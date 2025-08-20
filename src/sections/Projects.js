@@ -132,7 +132,7 @@ export default function Projects() {
   }, [inViewStates, videoStates])
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 max-w-[90%] mx-auto">
       <motion.div 
         className="text-center space-y-3"
         initial={{ opacity: 0, y: 20 }}
@@ -146,7 +146,7 @@ export default function Projects() {
         </p>
       </motion.div>
       
-      <div className="grid gap-6">
+      <div className="grid gap-10">
         {PROJECTS.map((project, index) => (
           <motion.div
             key={project.title}
@@ -162,7 +162,7 @@ export default function Projects() {
           >
             <div className="flex flex-col lg:flex-row">
               {/* Project Content - Left Side on Desktop */}
-              <div className="flex-1 p-5 space-y-4 order-2 lg:order-1">
+              <div className="flex-1 p-7 space-y-4 order-2 lg:order-1">
                 <h3 className="text-xl font-bold text-gray-900">{project.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
