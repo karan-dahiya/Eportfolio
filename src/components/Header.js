@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 
 const NAV = [
@@ -14,6 +14,17 @@ const NAV = [
 
 export default function Header() {
   const [open, setOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY
+      setIsScrolled(scrollTop > 50)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -27,7 +38,9 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-40 border-b border-neutral-200/60 backdrop-blur bg-white/70">
+    <header className={`sticky top-0 z-40 border-b border-neutral-200/60 backdrop-blur bg-white/70 transition-all duration-300 ${
+      isScrolled ? 'translate-y-0 opacity-100' : 'md:translate-y-0 md:opacity-100 -translate-y-full opacity-0'
+    }`}>
       <div className="container mx-auto px-4 flex items-center justify-between h-16">
         <button 
           onClick={() => scrollToSection('home')}
