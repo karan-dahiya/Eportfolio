@@ -113,17 +113,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="font-medium">Email</p>
-                  <p className="text-neutral-600">hello@yourname.dev</p>
-                </div>
-              </div>
-              
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-brand-500 rounded-full flex items-center justify-center">
-                  <Phone size={18} className="text-white" />
-                </div>
-                <div>
-                  <p className="font-medium">Phone</p>
-                  <p className="text-neutral-600">+1 (555) 123-4567</p>
+                  <p className="text-neutral-600">karan166728@gmail.com</p>
                 </div>
               </div>
               
@@ -133,7 +123,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="font-medium">Location</p>
-                  <p className="text-neutral-600">San Francisco, CA</p>
+                  <p className="text-neutral-600">Victoria, BC, Canada</p>
                 </div>
               </div>
             </div>

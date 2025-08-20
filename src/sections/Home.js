@@ -21,11 +21,14 @@ export default function Home() {
         transition={{ duration: 0.6 }} 
         className="space-y-4"
       >
-        <h1 className="text-2xl sm:text-4xl font-semibold">
-          Aspiring Full‑Stack Developer & Data Enthusiast
+        <h1 className="text-3xl sm:text-4xl font-bold m-0">
+        Hi, I&apos;m Karan Dahiya,
+        </h1>
+        <h1 className="text-xl sm:text-4xl font-semibold">
+        Full‑Stack Developer & Data Enthusiast
         </h1>
         <p className="text-neutral-600">
-          Hi, I&apos;m Karan Dahiya,
+        
           I build web and mobile applications, explore game development, and work with data analytics. I thrive on learning, solving challenges, and growing as a developer in the ever-evolving tech world.
         </p>
 
@@ -49,10 +52,9 @@ export default function Home() {
         initial={{ opacity: 0, y: 16 }} 
         animate={{ opacity: 1, y: 0 }} 
         transition={{ duration: 0.6, delay: 0.1 }} 
-        className="rounded-xl border p-3"
+        className="rounded-xl border p-5"
       >
-        <div className="relative w-full h-[400px] bg-neutral-100 rounded-xl overflow-hidden">
-          <Image
+<div className="relative w-full h-[400px] bg-neutral-100 rounded-xl overflow-hidden"><Image
             src="/images/profilepicture/myphoto.jpg"
             alt="My Photo"
             fill
