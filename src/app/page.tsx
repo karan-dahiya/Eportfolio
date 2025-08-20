@@ -15,7 +15,7 @@ export default function Page() {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="container mx-auto px-4 space-y-24 py-3 flex-1">
+      <main className="container mx-auto px-4 space-y-24 -mt-16 md:mt-0 py-0 md:py-3 flex-1">
         <section id="home"><Home /></section>
         <section id="skills"><Skills /></section>
         <section id="projects"><Projects /></section>
