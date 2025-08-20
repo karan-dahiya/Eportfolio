@@ -55,7 +55,7 @@ export default function Home() {
         transition={{ duration: 0.5, delay: 0.1 }} 
         className="flex justify-center md:justify-end"
       >
-        <div className="relative w-full max-w-md h-[350px] bg-gray-100 rounded-2xl overflow-hidden shadow-lg">
+        <div className="relative w-full max-w-md h-[300px] md:h-[450px] bg-gray-100 rounded-2xl overflow-hidden shadow-lg">
           <Image
             src="/images/profilepicture/myphoto.jpg"
             alt="My Photo"
