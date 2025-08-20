@@ -146,7 +146,7 @@ export default function Projects() {
         </p>
       </motion.div>
       
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid gap-6">
         {PROJECTS.map((project, index) => (
           <motion.div
             key={project.title}
@@ -160,70 +160,75 @@ export default function Projects() {
             viewport={{ once: true }}
             className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 h-full"
           >
-            <div className="aspect-video bg-gray-100 relative overflow-hidden">
-              {project.hasVideo ? (
-                <>
-                  {!videoStates[index] && (
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        fill
-                        style={{ objectFit: 'cover' }}
-                        className="transition-opacity duration-500"
-                      />
-                    </div>
-                  )}
-                  {videoStates[index] && (
-                    <video
-                      ref={(el) => {
-                        videoRefs.current[index] = el
-                      }}
-                      className="w-full h-full object-cover"
-                      loop
-                      muted
-                      playsInline
-                      preload="metadata"
-                      poster={project.image}
-                      onError={() => {
-                        console.log('Video failed to load, showing image instead')
-                        setVideoStates(prev => ({
-                          ...prev,
-                          [index]: false
-                        }))
-                      }}
-                    >
-                      <source src={project.video} type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
-                  )}
-                </>
-              ) : (
-                <div className="w-full h-full flex items-center justify-center">
-                  <p className="text-gray-600">Project Screenshot</p>
+            <div className="flex flex-col lg:flex-row">
+              {/* Project Content - Left Side on Desktop */}
+              <div className="flex-1 p-5 space-y-4 order-2 lg:order-1">
+                <h3 className="text-xl font-bold text-gray-900">{project.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{project.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map(tech => (
+                    <span key={tech} className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-lg font-medium">
+                      {tech}
+                    </span>
+                  ))}
                 </div>
-              )}
-            </div>
-            <div className="p-5 space-y-4">
-              <h3 className="text-xl font-bold text-gray-900">{project.title}</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">{project.description}</p>
-              <div className="flex flex-wrap gap-2">
-                {project.tech.map(tech => (
-                  <span key={tech} className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-lg font-medium">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              <div className="flex gap-4">
-                <a href={project.github} className="flex items-center gap-2 text-sm hover:text-blue-600 transition-colors duration-200 font-medium">
-                  <Github size={16} />
-                  Code
-                </a>
-                {project.live && (
-                  <a href={project.live} className="flex items-center gap-2 text-sm hover:text-blue-600 transition-colors duration-200 font-medium">
-                    <ExternalLink size={16} />
-                    Live Demo
+                <div className="flex gap-4">
+                  <a href={project.github} className="flex items-center gap-2 text-sm hover:text-blue-600 transition-colors duration-200 font-medium">
+                    <Github size={16} />
+                    Code
                   </a>
+                  {project.live && (
+                    <a href={project.live} className="flex items-center gap-2 text-sm hover:text-blue-600 transition-colors duration-200 font-medium">
+                      <ExternalLink size={16} />
+                      Live Demo
+                    </a>
+                  )}
+                </div>
+              </div>
+
+              {/* Image/Video - Right Side on Desktop */}
+              <div className="w-full lg:w-2/5 aspect-video lg:aspect-video bg-gray-100 relative overflow-hidden order-1 lg:order-2">
+                {project.hasVideo ? (
+                  <>
+                    {!videoStates[index] && (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          fill
+                          style={{ objectFit: 'contain' }}
+                          className="transition-opacity duration-500"
+                        />
+                      </div>
+                    )}
+                    {videoStates[index] && (
+                      <video
+                        ref={(el) => {
+                          videoRefs.current[index] = el
+                        }}
+                        className="w-full h-full object-contain"
+                        loop
+                        muted
+                        playsInline
+                        preload="metadata"
+                        poster={project.image}
+                        onError={() => {
+                          console.log('Video failed to load, showing image instead')
+                          setVideoStates(prev => ({
+                            ...prev,
+                            [index]: false
+                          }))
+                        }}
+                      >
+                        <source src={project.video} type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                    )}
+                  </>
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center">
+                    <p className="text-gray-600">Project Screenshot</p>
+                  </div>
                 )}
               </div>
             </div>

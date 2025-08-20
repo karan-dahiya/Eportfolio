@@ -40,7 +40,7 @@ export default function Header() {
     <header className={`sticky top-0 z-40 border-b border-gray-200/60 backdrop-blur-md bg-white/80 transition-all duration-300 ${
       isScrolled ? 'translate-y-0 opacity-100 shadow-sm' : 'md:translate-y-0 md:opacity-100 -translate-y-full opacity-0'
     }`}>
-      <div className="container mx-auto px-4 flex items-center justify-between h-14">
+      <div className="container mx-auto px-4 lg:px-16 xl:px-24 2xl:px-32 max-w-6xl flex items-center justify-between h-14">
         <button 
           onClick={() => scrollToSection('home')}
           className="font-bold text-lg tracking-tight hover:text-blue-600 transition-colors duration-200 cursor-pointer"
