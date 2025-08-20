@@ -5,17 +5,6 @@ import { useState, useEffect, useRef } from 'react'
 
 const EXPERIENCE = [
   {
-    title: 'Security Professional',
-    company: 'Paladin Security',
-    location: 'Part-time',
-    period: 'May 2024 - Present',
-    description: 'Provide comprehensive security services including alarm monitoring, first aid assistance, and customer support to ensure safety and security of premises and personnel.',
-    achievements: [
-      'Monitor security systems and respond promptly to alarms and emergency situations',
-      'Provide first aid assistance and emergency response when required'
-    ]
-  },
-  {
     title: 'Assistant Coordinator',
     company: 'Allianz Partners',
     location: 'Full-time',
@@ -77,47 +66,6 @@ export default function Resume() {
         viewport={{ once: true }}
         className="text-center space-y-3"
       >
-        <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-full">
-          <FileText className="w-5 h-5 text-purple-600" />
-          <span className="text-sm font-medium text-purple-700">Professional Experience</span>
-        </div>
-        <h2 className="text-3xl font-bold text-gray-900">Resume & Experience</h2>
-        <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-          My professional journey and achievements across various roles and industries. 
-          Download my detailed resume to learn more about my skills and experience.
-        </p>
-        
-        {/* Video and Download Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          viewport={{ once: true }}
-          className="flex flex-col items-center gap-4"
-        >
-          <div className="relative">
-            <video
-              ref={videoRef}
-              src="/images/resume/gif.mp4"
-              loop
-              muted
-              playsInline
-              className="w-48 h-48"
-              preload="metadata"
-            />
-          </div>
-          
-          <motion.a
-            href="/images/resume/Karan_Resume.pdf"
-            download
-            className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl hover:from-purple-700 hover:to-pink-700 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <Download size={18} />
-            Download Resume (PDF)
-          </motion.a>
-        </motion.div>
       </motion.div>
       
       {/* Work Experience Section */}
@@ -125,7 +73,7 @@ export default function Resume() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
           viewport={{ once: true }}
           className="text-center space-y-3"
         >
@@ -211,6 +159,55 @@ export default function Resume() {
           ))}
         </div>
       </div>
+
+      {/* Resume Download Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        viewport={{ once: true }}
+        className="text-center space-y-4"
+      >
+        <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-full">
+          <Download className="w-5 h-5 text-green-600" />
+          <span className="text-sm font-medium text-green-700">Download Resume</span>
+        </div>
+        <h3 className="text-2xl font-bold text-gray-900">Get My Full Resume</h3>
+        <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+          Download my detailed resume to learn more about my skills and experience.
+        </p>
+        
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="flex flex-col items-center gap-4"
+        >
+          <div className="relative">
+            <video
+              ref={videoRef}
+              src="/images/resume/gif.mp4"
+              loop
+              muted
+              playsInline
+              className="w-48 h-48"
+              preload="metadata"
+            />
+          </div>
+          
+          <motion.a
+            href="/images/resume/Karan_Resume.pdf"
+            download
+            className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-xl hover:from-green-700 hover:to-emerald-700 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <Download size={18} />
+            Download Resume (PDF)
+          </motion.a>
+        </motion.div>
+      </motion.div>
     </div>
   )
 }

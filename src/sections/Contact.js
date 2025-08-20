@@ -36,90 +36,7 @@ export default function Contact() {
         </p>
       </motion.div>
       
-      <div className="grid lg:grid-cols-2 gap-8">
-        {/* Contact Form */}
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          viewport={{ once: true }}
-          className="space-y-6"
-        >
-          <div className="space-y-3">
-            <h3 className="text-xl font-bold text-gray-900">Send me a message</h3>
-            <p className="text-gray-600">Fill out the form below and I&apos;ll get back to you as soon as possible.</p>
-          </div>
-          
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="grid md:grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <label htmlFor="name" className="block text-sm font-semibold text-gray-700">
-                  Full Name *
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl bg-white focus:ring-4 focus:ring-blue-100 focus:border-blue-500 transition-all duration-300 placeholder-gray-400"
-                  placeholder="John Doe"
-                />
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="email" className="block text-sm font-semibold text-gray-700">
-                  Email Address *
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl bg-white focus:ring-4 focus:ring-blue-100 focus:border-blue-500 transition-all duration-300 placeholder-gray-400"
-                  placeholder="john@example.com"
-                />
-              </div>
-            </div>
-            
-            <div className="space-y-2">
-              <label htmlFor="subject" className="block text-sm font-semibold text-gray-700">
-                Subject *
-              </label>
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                required
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl bg-white focus:ring-4 focus:ring-blue-100 focus:border-blue-500 transition-all duration-300 placeholder-gray-400"
-                placeholder="Project Inquiry / Collaboration / Job Opportunity"
-              />
-            </div>
-            
-            <div className="space-y-2">
-              <label htmlFor="message" className="block text-sm font-semibold text-gray-700">
-                Message *
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={5}
-                required
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl bg-white focus:ring-4 focus:ring-blue-100 focus:border-blue-500 transition-all duration-300 resize-none placeholder-gray-400"
-                placeholder="Tell me about your project, opportunity, or how we can work together..."
-              />
-            </div>
-            
-            <motion.button
-              type="submit"
-              className="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 flex items-center justify-center gap-3 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <Send size={18} />
-              Send Message
-            </motion.button>
-          </form>
-        </motion.div>
-        
+      <div className="grid lg:grid-cols-2 gap-8">      
         {/* Contact Info */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
@@ -129,9 +46,6 @@ export default function Contact() {
           className="space-y-6"
         >
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-gray-900">Contact Information</h3>
-            <p className="text-gray-600">Feel free to reach out through any of these channels.</p>
-            
             <div className="space-y-3">
               <motion.a 
                 href="mailto:karan166728@gmail.com"
