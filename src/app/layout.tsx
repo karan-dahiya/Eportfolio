@@ -1,7 +1,7 @@
 import './globals.css'
 
 export const metadata = {
-  title: 'Portfolio • Full-Stack Dev',
+  title: 'Karan Dahiya - Eportfolio',
   description: 'Full-Stack Developer Portfolio Mockup',
 }
 
@@ -13,6 +13,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/kd-logo.svg" type="image/svg+xml" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
         <script
           dangerouslySetInnerHTML={{
